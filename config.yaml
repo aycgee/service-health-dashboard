@@ -1,0 +1,11 @@
+check_interval_seconds: 5
+timeout_seconds: 2
+failure_threshold: 3      # üst üste kaç hatada DOWN sayılsın
+db_path: health.db
+
+services:
+  - {name: ExchangeRateService, protocol: REST,   host: 127.0.0.1, port: 8001, health_path: /health}
+  - {name: ClimateService,      protocol: gRPC,   host: 127.0.0.1, port: 8002}
+  - {name: ServiceABC,          protocol: SOAP,   host: 127.0.0.1, port: 8003, health_path: /health}
+  - {name: ServiceXYZ,          protocol: JAX-RS, host: 127.0.0.1, port: 8004, health_path: /health}
+  - {name: ProductService,      protocol: REST,   host: 127.0.0.1, port: 8005, health_path: /health}

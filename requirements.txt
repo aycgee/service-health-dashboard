@@ -1,0 +1,6 @@
+httpx
+pyyaml
+grpcio
+grpcio-health-checking
+fastapi
+uvicorn
